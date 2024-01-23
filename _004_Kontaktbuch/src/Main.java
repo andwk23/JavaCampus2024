@@ -4,12 +4,16 @@ public class Main {
         Auto meinZweitesAuto = new Auto("BMW", 45000);
 
         gibAus(meinErstesAuto);
+        System.out.println("Hersteller: " + Auto.hersteller);
+        Auto.hersteller = "Volkswagen";
+        System.out.println("Hersteller: " + Auto.hersteller);
 
         meinErstesAuto.modell = "Polo";
         meinErstesAuto.preis = 20000;
 
         gibAus(meinErstesAuto);
         gibAus(meinZweitesAuto);
+        System.out.println("MeinErstesAuto.hersteller: " + meinErstesAuto.hersteller);
 
         Fahrrad f1 = erstelleFahrrad();
         gibAus(f1);
@@ -31,6 +35,7 @@ public class Main {
     }
 }
 class Auto{
+    static String hersteller = "VW";
     String modell = "";
     int preis = 0;
 
