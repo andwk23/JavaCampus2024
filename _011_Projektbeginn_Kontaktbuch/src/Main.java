@@ -1,3 +1,6 @@
+import javax.swing.*;
+import java.util.Locale;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -20,12 +23,31 @@ public class Main {
         }
 
 
-        // Eingabeaufforderung
+        // Eingabeaufforderung[Erstellen/Anzeigen/Suchen/Beenden]
 
+        String eingabe =
+                nichtLeereEingabe("Bitte gib einen befehl ein [Erstellen/Anzeigen/Suchen/Beenden]").toUpperCase();
+        if(eingabe.equals("ERSTELLEN")) {
+            System.out.println("Befehl: ERSTELLEN");
+        } else if(eingabe.equals("ANZEIGEN")){
+            System.out.println("Befehl: ANZEIGEN");
+        } else if (eingabe.equals("SUCHEN")){
+            System.out.println("Befehl: SUCHEN");
+        } else if (eingabe.equals("BEENDEN")){
+            System.out.println("Befehl: BEENDEN");
+        }
         // Logik
 
         // Kontakte speichern
     }
+    public static String nichtLeereEingabe(String eingabeAufforderung){
+        String eingabe = "";
+        while(eingabe.trim().equals("")){
+            eingabe = JOptionPane.showInputDialog(eingabeAufforderung);
+        }
+        
+        return eingabe;
 
+    }
 
 }
